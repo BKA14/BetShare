@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>LIVRAISON</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div style="text-align: center;" *ngIf="grade === 'admin' || grade === 'superadmin'">
+  <ion-item class="span" lines="none">
+    <span color="success">Ajouter un numéro</span>
+    <ion-icon type="button" class="icon" [routerLink]="['/ajouter-numero-livraison/']" style="zoom: 1.1;" name="add-circle-outline"></ion-icon>
+  </ion-item>
+</div>
+
+<ion-content>
+  <br>
+  <h3 class="centered-heading" *ngIf="number !== 'erreur_chargement' && number !== 'aucune_alerte'">
+    Besoin d'une livraison partout à Bobo-Dioulasso ?   <br>
+    Contactez-nous à travers l'un des numéros disponibles.
+  </h3>
+  <br>
+
+  <ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-card *ngFor="let number of number" class="service-card">
+      <br>
+      <p> Opérateur : {{number.nom_operateur}}</p>
+      <ion-card-content>
+        <ion-button color="success" (click)="appeler(number.numero)">
+          <ion-icon slot="start" name="call-outline"></ion-icon>
+          Appeler
+        </ion-button>
+        <br>
+      </ion-card-content>
+      <div class="icon-right" *ngIf="grade === 'admin' || grade === 'superadmin'">
+        <ion-icon name="create" style="zoom: 2.5;" color="success" [routerLink]="['/update-numero-livraison/', number.id]"></ion-icon> &nbsp;
+        <ion-icon name="trash" style="zoom: 2.5;" class="iconsupp" (click)="presentAlert(number)"></ion-icon>
+      </div>
+    </ion-card>
+  </ion-list>
+
+  <br *ngIf="number == 'erreur_chargement'">
+  <br *ngIf="number == 'erreur_chargement'">
+  <div *ngIf="number == 'erreur_chargement'" class="erreur_chargement">
+    <ion-icon name="alert-circle" style="zoom: 12;" color="success"></ion-icon>
+    <p>Erreur de chargement</p>
+    <br>
+    <ion-button color="success" (click)="refreshPage($event)">réessayer</ion-button>
+  </div>
+
+  <br *ngIf="number == 'aucune_alerte'">
+  <br *ngIf="number == 'aucune_alerte'">
+  <div>
+    <div  *ngIf="number == 'aucune_alerte'" class="erreur_chargement">
+      <ion-icon name="alert-circle" style="zoom: 12;" color="success"></ion-icon>
+      <p>Aucun numero</p>
+      <br>
+    </div>
+  </div>
+
+</ion-content>

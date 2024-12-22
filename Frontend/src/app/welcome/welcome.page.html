@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title >PINGOPING</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <br> <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let activity of activities">
+        <ion-card [routerLink]="[activity.link]" >
+          <ion-card-header>
+            <ion-card-title>{{ activity.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon [name]="activity.icon" style="font-size: 2em; color: var(--ion-color-success);"></ion-icon>
+            <p>{{ activity.description }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- menu -->
+<app-sidebar></app-sidebar>

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title >SIGNALISATION</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <br>
+  <form [formGroup]="signalementForm" (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label class="coord-label">Vos coordonnées géographiques</ion-label>
+      <br>
+      <ion-label class="coord-value" position="stacked">Longitude : {{ signalementForm.get('location')?.value?.longitude }}</ion-label>
+      <ion-label class="coord-value" position="stacked">Latitude : {{ signalementForm.get('location')?.value?.latitude }}</ion-label>
+      <ion-button color="success" class="form-control" (click)="localiser()">Actualiser vos coordonnées</ion-button>
+    </ion-item>
+
+       <!-- Conteneur pour la carte Leaflet, initialement caché -->
+       <div id="map" style="height: 400px; display: none; width: 60%; margin: 0 auto"></div>
+       <ion-item>
+       <ion-button color="success" class="form-control" *ngIf="mapVisible" (click)="valider()">Valider la position</ion-button>
+       <br *ngIf="mapVisible" >
+      <ion-button color="success" class="form-control" *ngIf="!mapVisible" (click)="enableManualLocationSelection()">Choisir ma position manuellement</ion-button>
+    </ion-item>
+    <br>
+
+    <ion-item class="form-control">
+      <ion-label>Choisir le service</ion-label>
+      <ion-select formControlName="service">
+        <ion-select-option *ngFor="let service of service" [value]="service.valeur">
+          {{ service.nom }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+    <ion-item class="form-control">
+      <ion-label>Choisir la ville</ion-label>
+      <ion-select formControlName="ville">
+        <ion-select-option *ngFor="let ville of ville" [value]="ville.valeur">
+          {{ ville.nom }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+     <br>
+
+    <ion-item class="form-control">
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea formControlName="description" placeholder="Description (optionnelle)"></ion-textarea>
+    </ion-item>
+
+    <br>
+    <p *ngIf="!selectedFile" class="alert">Prenez ou choisissez une image/vidéo</p>
+    <p color="warning" class="alert">taille max : 100 Mo</p>
+    <ion-item class="form-control">
+    <ion-label>Photo/vidéo</ion-label>
+    <ion-label position="floating" class="h2">Choisir une photo/vidéo</ion-label><br/>
+    <input type="file" accept="image/*,video/*"  formControlName="image"  name="photo" (change)="onFileSelected($event)" />
+    </ion-item>
+    <br>
+    <ion-label *ngIf="selectedFile">Si l'image choisie ne correspond pas, ou est trop floue, choisissez ou prenez une autre image/vidéo!</ion-label>
+    <br>
+
+
+
+    <ion-button [disabled]="!signalementForm.get('ville').value  || !signalementForm.get('service').value || !signalementForm.get('image').value  || !signalementForm.get('location').value.longitude  || !signalementForm.get('location').value.latitude" expand="block" color="success" (click)="onSubmit()">Envoyer Signalisation</ion-button>
+  </form>
+</ion-content>

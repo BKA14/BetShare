@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title >STATISTIQUE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<br> <br>
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Afficher les erreurs ou l'absence d'alertes -->
+  <div *ngIf="alert == 'erreur_chargement'" class="erreur_chargement">
+    <ion-icon name="alert-circle" style="zoom: 12;" color="success"></ion-icon>
+    <p>Erreur de chargement</p>
+    <br>
+    <ion-button color="success" (click)="refreshPage($event)">réessayer</ion-button>
+  </div>
+
+  <div *ngIf="alert == 'aucune_alerte'" class="erreur_chargement">
+    <ion-icon name="alert-circle" style="zoom: 12;" color="success"></ion-icon>
+    <p>Aucune alerte effectué</p>
+    <br>
+  </div>
+
+  <div *ngIf="alert != 'aucune_alerte' && alert != 'erreur_chargement'">
+
+  <!-- Afficher les statistiques si les alertes sont présentes
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Statistiques par Ville</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let ville of villeStats | keyvalue">
+            <ion-label>{{ ville.key }}</ion-label>
+            <ion-badge color="primary" slot="end">{{ ville.value }}</ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  -->
+
+
+      <!-- Graphique pour les quantités des 3 différentes entreprises -->
+<div class="div_screen">
+  <br>
+  <ion-card>
+    <ion-card-title class="title" >
+      Nombre d'alertes par ville
+    </ion-card-title>
+    <br>
+    <ion-card-content>
+      <canvas id="entrepriseChart"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+<!--
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Statistiques par Service</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let service of serviceStats | keyvalue">
+            <ion-label>{{ service.key }}</ion-label>
+            <ion-badge color="secondary" slot="end">{{ service.value }}</ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+ -->
+
+    <!-- Ajout du troisième graphique -->
+    &nbsp; &nbsp;
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="title">
+          Nombre d'alertes par service
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas id="statChart"></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</div>
+</ion-content>

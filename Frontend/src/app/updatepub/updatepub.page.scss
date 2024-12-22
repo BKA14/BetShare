@@ -1,0 +1,65 @@
+label {
+  font-size: 14px;
+  font-style: normal;
+  padding: 11px;
+  font-family: "Roboto", sans-serif;
+  color: #2a2c2a;
+  text-align: center;
+}
+
+h2 {
+  font-size: 15px;
+  font-style: normal;
+  padding: 11px;
+  font-family: "Roboto", sans-serif;
+  color: #2a2c2a;
+  text-align: center;
+  margin: auto;
+  padding: 2px;
+
+  word-spacing: 0px;
+  white-space: normal; /* Permet le retour à la ligne automatique */
+  word-wrap: break-word; /* Assure le passage à la ligne en cas de besoin */
+}
+
+
+.itementreprise{
+  background-color:  #42b670;
+  padding: 0.6px;
+
+  width: auto;
+  --padding-start: 0;
+  --padding-end: 0;
+  margin: 0;
+  }
+  .keyboard-fix {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+
+  ion-header {
+    ion-toolbar {
+      height: 56px;  /* Hauteur recommandée pour les en-têtes sur mobile */
+      display: flex;
+      align-items: center;  /* Centrer verticalement les éléments */
+      --background: linear-gradient(to right, #0eeb49, #05a83d) !important;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    ion-title {
+      font-size: 1.2rem;  /* Taille du texte adaptable */
+      text-align: center;
+      color: white;
+
+    }
+  
+    ion-back-button {
+      --color: light;  /* Couleur spécifique du bouton retour */
+    }
+  }
+  
+  

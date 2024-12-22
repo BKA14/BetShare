@@ -1,0 +1,275 @@
+ion-content{
+
+    --ion-background-color:#fdfdfd;
+  }
+  ion-item{
+    --background: linear-gradient(#fdfdfd, #fdfdfd) !important;
+    font-size: 20px;
+    font-style: normal;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .deconnect{
+     float: right;
+      }
+  .utilisateur{
+
+      float: left;
+    }
+
+  .list{
+    font-size: 20px;
+    font-style: normal;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5;
+    }
+
+    @media (min-width: 1024px) {
+      .div_screen {
+        padding-bottom: 0 !important;
+        width: 62%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 18%;
+      }
+    }
+
+
+    ion-header {
+      ion-toolbar {
+        height: 56px;  /* Hauteur recommandée pour les en-têtes sur mobile */
+        display: flex;
+        align-items: center;  /* Centrer verticalement les éléments */
+        --background: linear-gradient(to right, #0eeb49, #05a83d) !important;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      ion-title {
+        font-size: 1.2rem;  /* Taille du texte adaptable */
+        text-align: center;
+        color: white;
+
+      }
+
+      ion-back-button {
+        --color: light;  /* Couleur spécifique du bouton retour */
+      }
+    }
+
+
+    .iconsupp{
+      //display: inline-block;
+      color: #f70707a9;
+     }
+
+     .iconmodif{
+      //display: inline-block;
+      color: #0808f8a9;
+
+    }
+    .checkbox {
+    //display: inline-block;
+    font-size: 42px;
+    color: #0808f8a9;
+    //vertical-align: middle;
+    float: left;
+
+   }
+
+    .icon{
+      //display: inline-block;
+      font-size: 42px;
+      color: #2dd36f;
+      vertical-align: middle;
+      float: right;
+
+     }
+
+     .text{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 16px;
+      font-style: normal;
+      text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .span{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 16px;
+      font-style: normal;
+      text-align: center;
+      --ion-background-color:#fdfdfd;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .h2{
+      //vertical-align: middle;
+      font-size: 14px;
+      font-style: normal;
+      padding: 15px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .select{
+      padding: 7px;
+      top: 0px;
+      color: #121212;
+      left: 200px;
+      width: 100px;
+      right: 1px;
+      vertical-align: right;
+      width: 150px;
+      height: 0px;
+      text-align: right;
+      font-size: 13px;
+      font-style: normal;
+      --ion-background-color:#fdfdfd;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .tool2{
+      --background: linear-gradient(rgb(255, 255, 255), rgb(227, 227, 231)) !important;
+      font-size: 19px;
+      font-style: normal;
+      text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    padding: 6;
+      }
+
+    .tool3{
+      font-size: 16px;
+      font-style: normal;
+      text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    padding: 4;
+      }
+
+      .tool{
+        //display: inline-block;
+        font-size: 42px;
+        color: #ffffff;
+
+      }
+
+    .welcometitle{
+  color: #ffffff;
+    }
+    .logo {
+      text-align: center;
+      font-size: 55px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 38%;
+      //transform: translateY(-50%);
+      color: #ffffff;
+      font-style: normal;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .recherche {
+      font-size: 20px;
+      line-height: 26px;
+      --ion-background-color:#fafafa;
+    }
+
+    .log {
+      font-size: 16px;
+      line-height: 22px;
+
+      color: #ffffff;
+
+      margin: 0;
+    }
+
+    #container a {
+      text-decoration: none;
+      color: #d90a0a;
+    }
+
+    .arrow-container {
+      position: fixed;
+      bottom: 70%;/* Ajustez cette valeur selon vos préférences */
+      right: 12px;  /* Ajustez cette valeur selon vos préférences */
+      color: #7cc571; /* Couleur de l'icône */
+      border-radius: 70%;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 1000; /* Assurez-vous que l'icône est au-dessus des autres éléments */
+    }
+
+    .arrow-container.visible {
+      opacity: 1;
+    }
+
+    .erreur_chargement {
+      text-align: center;
+      bottom: 35%;
+    }
+
+    ion-header {
+      --padding-top: env(safe-area-inset-top);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px; /* Ajustez selon les besoins */
+    }
+
+    .title {
+      font-size: 1.2rem; /* Ajustez selon les besoins */
+      text-align: center;
+      margin-bottom: 10px; /* Ajustez selon les besoins */
+    }
+
+    .deconnect {
+      margin-top: 10px; /* Ajustez selon les besoins */
+      margin-bottom: 10px; /* Ajustez selon les besoins */
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .username {
+      white-space: nowrap;        /* Empêche le retour à la ligne */
+      overflow: hidden;           /* Cache le texte débordant */
+      text-overflow: ellipsis;    /* Ajoute des ellipses pour le texte débordant */
+      max-width: 109px;           /* Ajustez la largeur maximale selon vos besoins */
+      text-align: center;         /* Centre le texte */
+    }
+
+    .searchbar {
+      width: 100%;
+      margin-top: 10px; /* Ajustez selon les besoins */
+    }
+
+    .cart-label {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      background-color: #f9f9f9; /* Light background */
+      border-radius: 20px; /* Rounded label */
+      font-size: 16px;
+      font-weight: bold;
+      color: #333; /* Dark text */
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        background-color: #e0e0e0; /* Slightly darker on hover */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+      }
+    }

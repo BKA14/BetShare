@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title >PMU</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="custom-background" [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list >
+    <div class="list" >
+      <form class="form" [formGroup]="verifieForm">
+
+        <ion-item>
+          <!-- Nombre de partants -->
+        <ng-container *ngIf="!isEditingCommentaire1">
+          <ion-label  class="info"> {{pmu.num2}}</ion-label>
+        </ng-container>
+          <ion-icon name="create-outline" slot="end" color="success" (click)="editField('num2')" *ngIf="grade === 'admin' || grade === 'superadmin'"></ion-icon>
+          <ng-container *ngIf="isEditingNum2">
+            <ion-input formControlName="num2"></ion-input>
+          </ng-container>
+        </ion-item>
+
+        <br>
+        <ion-item>
+          <!-- Commentaire 1 -->
+          <ng-container *ngIf="!isEditingCommentaire1">
+            <ion-label class="info">{{pmu.commentaire1}}</ion-label>
+          </ng-container>
+          <ion-icon name="create-outline" slot="end" color="success" (click)="editField('commentaire1')" *ngIf="grade === 'admin' || grade === 'superadmin'"></ion-icon>
+          <ng-container *ngIf="isEditingCommentaire1">
+            <ion-input formControlName="commentaire1"></ion-input>
+          </ng-container>
+        </ion-item>
+
+        <ion-item>
+          <!-- Nombre de partants -->
+          <ion-label  class="info">Nombre de partants : {{pmu.nbrpartant}}</ion-label>
+          <ion-icon name="create-outline" slot="end" color="success" (click)="editField('nbrpartant')" *ngIf="grade === 'admin' || grade === 'superadmin'"></ion-icon>
+          <ng-container *ngIf="isEditingNbrpartant">
+            <ion-input formControlName="nbrpartant"></ion-input>
+          </ng-container>
+        </ion-item>
+
+        <ion-item>
+          <!-- Type de course -->
+          <ion-label  class="info">Type de course : {{pmu.typecourse}}</ion-label>
+          <ion-icon name="create-outline" slot="end" color="success" (click)="editField('typecourse')" *ngIf="grade === 'admin' || grade === 'superadmin'"></ion-icon>
+          <ng-container *ngIf="isEditingTypecourse">
+            <ion-input formControlName="typecourse"></ion-input>
+          </ng-container>
+        </ion-item>
+
+        <ion-item>
+          <!-- Numéro du jour -->
+          <ng-container *ngIf="!isEditingNumdujour">
+            <ion-label class="info">{{pmu.numdujour}}</ion-label>
+          </ng-container>
+          <ion-icon name="create-outline" slot="end" color="success" (click)="editField('numdujour')" *ngIf="grade === 'admin' || grade === 'superadmin'"></ion-icon>
+          <ng-container *ngIf="isEditingNumdujour">
+            <ion-input formControlName="numdujour"></ion-input>
+          </ng-container>
+        </ion-item>
+
+      <ion-item>
+          <!-- Commentaire 2 -->
+          <ng-container *ngIf="!isEditingCommentaire2">
+          <ion-label class="info">{{pmu.commentaire2}}</ion-label>
+        </ng-container>
+        <ion-icon name="create-outline" slot="end" color="success" (click)="editField('commentaire2')" *ngIf="grade === 'admin' || grade === 'superadmin'"></ion-icon>
+        <ng-container *ngIf="isEditingCommentaire2">
+          <ion-input formControlName="commentaire2"></ion-input>
+        </ng-container>
+      </ion-item>
+      <br>
+        <ion-button expand="block" *ngIf="grade === 'admin' || grade === 'superadmin'" fill="outline" color="success" (click)="modifier()" [disabled]="verifieForm.invalid">
+          Valider &nbsp; <ion-icon name="save-outline"></ion-icon>
+        </ion-button>
+
+      </form>
+    </div>
+  </ion-list>
+</ion-content>

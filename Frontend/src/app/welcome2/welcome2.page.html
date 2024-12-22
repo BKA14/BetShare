@@ -1,0 +1,25 @@
+
+<ion-header >
+  <ion-toolbar color="dark" class="tool1">
+    <br/>  <br/>
+      <ion-title class="tool2">LISTE DES ENTREPRISES</ion-title>
+      <br/>
+    <ion-searchbar class="recherche" placeholder="Rechercher une entreprise" [(ngModel)]="term" ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<br/>  <br/>
+<ion-content padding class="tool3" [fullscreen]="true">
+<ion-item>
+  <ion-label> Pas de connection internet</ion-label>
+
+  <ion-icon  name="warning-outline" style="zoom: 2.0;"color="warning"></ion-icon>
+</ion-item>
+<br/>  <br/> <br/>
+
+<ion-button class="loading" color="dark" (click)="showLoading()">
+  <ion-icon name="reload-outline" style="zoom: 5.0;"  ></ion-icon>
+</ion-button>
+<br>
+<ion-label  class="centre" > Clickez pour  réessayer </ion-label>
+
+</ion-content>

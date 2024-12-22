@@ -1,0 +1,38 @@
+{
+  "appId": "com.pingoping.bf",
+  "appName": "pingoping",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {},
+  "server": {
+    "cleartext": true,
+    "url": "http://localhost:8101",
+    "originalUrl": "http://192.168.137.93:8101"
+  },
+  "plugins": {
+    "PushNotifications": {
+      "presentationOptions": [
+        "badge",
+        "sound",
+        "alert"
+      ],
+      "SplashScreen": {
+        "launchShowDuration": 2000,
+        "launchAutoHide": true,
+        "launchFadeOutDuration": 1000,
+        "androidSplashResourceName": "splash",
+        "androidScaleType": "CENTER_CROP",
+        "showSpinner": true,
+        "androidSpinnerStyle": "large",
+        "splashFullScreen": true,
+        "splashImmersive": true,
+        "useDialog": true
+      }
+    }
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "ios": {}
+}

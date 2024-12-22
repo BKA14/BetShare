@@ -1,0 +1,148 @@
+.tool2 {
+  --background: linear-gradient(rgb(255, 255, 255), rgb(227, 227, 231)) !important;
+  font-size: 16px;
+  font-style: normal;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  padding: 6;
+}
+
+ion-header {
+  ion-toolbar {
+    height: 56px;  /* Hauteur recommandée pour les en-têtes sur mobile */
+    display: flex;
+    align-items: center;  /* Centrer verticalement les éléments */
+    --background: linear-gradient(to right, #0eeb49, #05a83d) !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  ion-title {
+    font-size: 1.2rem;  /* Taille du texte adaptable */
+    text-align: center;
+    color: white;
+
+  }
+
+  ion-back-button {
+    --color: light;  /* Couleur spécifique du bouton retour */
+  }
+}
+
+ion-title.tool2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 1px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 76%;
+}
+
+
+.cart-label {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 20px; /* Rounded label */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* Dark text */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  }
+}
+
+.plat-info {
+  flex: 1;
+  margin-right: 6px;
+  text-align: left;
+}
+
+.plat-nom {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.restaurant-nom {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.plat-prix {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.qty-input {
+  width: 24px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.total-item {
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.total-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.order-button {
+  margin-top: 15px;
+}
+
+.empty-cart-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.empty-cart-icon {
+  font-size: 4rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.empty-cart-message {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+ion-item {
+  --background: transparent;
+}
+
+ion-button {
+  --border-radius: 12px;
+}
+

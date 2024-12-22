@@ -1,0 +1,81 @@
+.toolbar {
+  background-color:   #10c938;
+    --ion-toolbar-background: transparent;
+    color: #fff;
+    padding: 0 15px;
+  }
+
+  ion-header {
+    ion-toolbar {
+      height: 56px;  /* Hauteur recommandée pour les en-têtes sur mobile */
+      display: flex;
+      align-items: center;  /* Centrer verticalement les éléments */
+      --background: linear-gradient(to right, #0eeb49, #05a83d) !important;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    ion-title {
+      font-size: 1.2rem;  /* Taille du texte adaptable */
+      text-align: center;
+      color: white;
+
+    }
+  
+    ion-back-button {
+      --color: light;  /* Couleur spécifique du bouton retour */
+    }
+  }
+
+  
+.title {
+  text-align: center;
+  width: 100%;
+}
+
+.header-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.message-box {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+ion-button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+ion-icon {
+  margin-right: 8px;
+}
+
+
+.ligne{
+  background-color:  #4ca05e;
+  padding: 0.6px;
+  width: auto;
+  --padding-start: 0;
+  --padding-end: 0;
+  margin: 0;
+  }
